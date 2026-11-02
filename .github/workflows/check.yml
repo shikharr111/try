@@ -1,0 +1,33 @@
+name: check
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: collect reports (never fails the job; results are published to branch ci-report)
+        run: |
+          mkdir -p report
+          (npm test 2>&1 | tail -40) > report/unit-tests.txt || true
+          (npx tsc --noEmit 2>&1) > report/typecheck.txt || true
+          (env -u NEXT_PUBLIC_SUPABASE_URL -u NEXT_PUBLIC_SUPABASE_ANON_KEY npm run build 2>&1 | tail -120) > report/build.txt || true
+          echo "BUILD EXIT: $(grep -c 'Failed to compile\|Build error\|Error:' report/build.txt || true) error-lines" >> report/summary.txt
+          echo "commit: $GITHUB_SHA" > report/summary.txt
+          echo "TYPE ERRORS: $(grep -c 'error TS' report/typecheck.txt || true)" >> report/summary.txt
+          grep -E '^# (tests|pass|fail)' report/unit-tests.txt >> report/summary.txt || true
+      - name: publish report branch
+        run: |
+          cd report
+          git init -q -b ci-report
+          git config user.name "ci"; git config user.email "ci@users.noreply.github.com"
+          git add -A; git commit -q -m "CI report for $GITHUB_SHA"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ci-report

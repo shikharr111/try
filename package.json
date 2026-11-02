@@ -1,0 +1,44 @@
+{
+  "name": "sitepulse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SitePulse: construction project monitoring (Next.js + Supabase)",
+  "scripts": {
+    "test": "tsx --test \"src/lib/**/__tests__/*.test.ts\"",
+    "typecheck:calc": "tsc -p tsconfig.lib.json",
+    "test:db": "bash supabase/tests/run_db_tests.sh",
+    "typecheck:lib": "tsc -p tsconfig.lib.json",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "tsx": "^4.19.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.1.0"
+  },
+  "engines": {
+    "node": ">=20.9"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.47.0",
+    "exceljs": "^4.4.0",
+    "lucide-react": "^0.469.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.0",
+    "server-only": "^0.0.1",
+    "xlsx": "0.18.5"
+  }
+}
