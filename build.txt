@@ -1,0 +1,76 @@
+
+> sitepulse@0.1.0 build
+> next build
+
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+   ▲ Next.js 15.5.28
+   - Experiments (use with caution):
+     · serverActions
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (114kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (268kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ✓ Compiled successfully in 16.4s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/14) ...
+   Generating static pages (3/14) 
+   Generating static pages (6/14) 
+   Generating static pages (10/14) 
+ ✓ Generating static pages (14/14)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                      Size  First Load JS
+┌ ○ /                                         17.6 kB         120 kB
+├ ○ /_not-found                                 163 B         103 kB
+├ ƒ /account                                  1.92 kB         108 kB
+├ ƒ /account/notifications                    1.92 kB         108 kB
+├ ƒ /account/security                         2.31 kB         108 kB
+├ ƒ /api/cron/daily-reminder                    163 B         103 kB
+├ ƒ /api/email/dpr                              163 B         103 kB
+├ ƒ /auth/callback                              163 B         103 kB
+├ ○ /camera                                   77.9 kB         181 kB
+├ ƒ /dashboard                                2.93 kB         213 kB
+├ ƒ /forgot-password                           1.9 kB         108 kB
+├ ○ /icon.svg                                     0 B            0 B
+├ ƒ /login                                     2.7 kB         105 kB
+├ ƒ /onboarding                               1.92 kB         108 kB
+├ ƒ /organization                             2.31 kB         108 kB
+├ ○ /privacy                                    163 B         103 kB
+├ ƒ /projects                                  1.9 kB         108 kB
+├ ƒ /projects/[projectId]                     2.93 kB         213 kB
+├ ƒ /projects/[projectId]/ai                  2.31 kB         108 kB
+├ ƒ /projects/[projectId]/analytics           2.93 kB         213 kB
+├ ƒ /projects/[projectId]/api/export            163 B         103 kB
+├ ƒ /projects/[projectId]/api/import            163 B         103 kB
+├ ƒ /projects/[projectId]/api/template          163 B         103 kB
+├ ƒ /projects/[projectId]/delays              3.32 kB         213 kB
+├ ƒ /projects/[projectId]/import               3.9 kB         110 kB
+├ ƒ /projects/[projectId]/plan                2.31 kB         108 kB
+├ ƒ /projects/[projectId]/progress-report     3.02 kB         213 kB
+├ ƒ /projects/[projectId]/reports              1.9 kB         108 kB
+├ ƒ /projects/[projectId]/reports/[reportId]    762 B         112 kB
+├ ƒ /projects/[projectId]/reports/new           188 B         112 kB
+├ ƒ /projects/[projectId]/settings            2.31 kB         108 kB
+├ ƒ /projects/new                             1.92 kB         108 kB
+├ ƒ /reset-password                           1.92 kB         108 kB
+├ ○ /signup                                     163 B         103 kB
+├ ○ /terms                                      163 B         103 kB
+└ ƒ /workspace                                2.74 kB         105 kB
++ First Load JS shared by all                  103 kB
+  ├ chunks/1255-60d8dc7c8c9309a1.js           46.3 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js       54.2 kB
+  └ other shared chunks (total)               2.23 kB
+
+
+ƒ Middleware                                  93.9 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
